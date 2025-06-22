@@ -1,8 +1,5 @@
 use anyhow::{anyhow, Result};
-use std::{
-    fmt,
-    ops::{Add, AddAssign, Deref, Mul},
-};
+use std::ops::{Add, AddAssign, Deref, Mul};
 
 pub struct Vector<T> {
     data: Vec<T>,
@@ -24,7 +21,7 @@ impl<T> Deref for Vector<T> {
 
 pub fn dot_product<T>(a: Vector<T>, b: Vector<T>) -> Result<T>
 where
-    T: Copy + Default + Add<Output = T> + AddAssign + Mul<Output = T> + fmt::Debug,
+    T: Copy + Default + Add<Output = T> + AddAssign + Mul<Output = T>,
 {
     if a.len() != b.len() {
         return Err(anyhow!("Vectors must have the same length for dot product"));
