@@ -19,7 +19,7 @@ fn main() -> Result<()> {
     //     metrics.inc("call.thread.worker.1");
     // }
 
-    println!("{:?}", metrics.snapshot());
+    //println!("{:?}", metrics.snapshot());
 
     // start N workers and M requests
     for idx in 0..N {
@@ -31,7 +31,7 @@ fn main() -> Result<()> {
 
     loop {
         thread::sleep(Duration::from_secs(2));
-        println!("{:?}", metrics.snapshot());
+        println!("{}", metrics);
     }
 }
 
