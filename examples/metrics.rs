@@ -21,6 +21,8 @@ fn main() -> Result<()> {
 
     //println!("{:?}", metrics.snapshot());
 
+    println!("{}", metrics);
+
     // start N workers and M requests
     for idx in 0..N {
         task_worker(idx, metrics.clone())?;
